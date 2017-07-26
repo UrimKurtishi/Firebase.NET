@@ -43,8 +43,18 @@ var responseMessage = await pushService.PushMessage(requestMessage);
 
 ```
 
-# Header 1
-## Header 2
+## Firebase Cloud Messaging (FCM) HTTP Protocol
+The FCM service enables developers to push notifications to their client apps to Android, iOS and Web clients. To use it, create a project in the [FCM console](https://console.firebase.google.com)
+
+
+## Firebase.NET Library
+
+The library provides for models that can be pushed to client apps:
+* AndroidNotification
+* IosNotification
+* WebNotification
+* CrossPlatformNotification
+
 ### Header 3
 
 - Bulleted
