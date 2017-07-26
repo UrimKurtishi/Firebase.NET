@@ -1,10 +1,23 @@
 ## Welcome to Firebase.NET
 
-![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg) ![FCM Logo](https://firebase.google.com/_static/74dcb9f23a/images/firebase/lockup.png)    ![.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/docs/NET.jpg)
+![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg) ![FCM Logo](https://firebase.google.com/_static/74dcb9f23a/images/firebase/lockup.png)  &nbsp  ![.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/docs/NET.jpg)
 
 Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging. 
 
 It is written entirely in C# and can be used in any c# or .net projects.
+
+
+## Firebase Cloud Messaging (FCM) HTTP Protocol
+The FCM service enables developers to push notifications to their client apps to Android, iOS and Web clients. To use it, create a project in the [FCM console](https://console.firebase.google.com)
+
+
+## Firebase.NET Library
+
+The library provides for models that can be pushed to client apps:
+* AndroidNotification
+* IosNotification
+* WebNotification
+* CrossPlatformNotification
 
 ### How to use Firebase.NET
 
@@ -42,18 +55,6 @@ PushNotificationService pushService = new PushNotificationService(updateFunc, de
 var responseMessage = await pushService.PushMessage(requestMessage);
 
 ```
-
-### Firebase Cloud Messaging (FCM) HTTP Protocol
-The FCM service enables developers to push notifications to their client apps to Android, iOS and Web clients. To use it, create a project in the [FCM console](https://console.firebase.google.com)
-
-
-### Firebase.NET Library
-
-The library provides for models that can be pushed to client apps:
-* AndroidNotification
-* IosNotification
-* WebNotification
-* CrossPlatformNotification
 
 ### Header 3
 
