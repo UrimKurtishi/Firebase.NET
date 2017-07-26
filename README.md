@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## Welcome to Firebase.NET
 
-You can use the [editor on GitHub](https://github.com/urimkurtishi/Firebase.NET/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging.
 
 ### Markdown
 
