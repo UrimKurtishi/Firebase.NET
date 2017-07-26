@@ -8,10 +8,10 @@ Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables send
 
 Below are few sample on pushing notifications to your client apps through Firebase.NET
 
-```markdown
-Syntax highlighted code block
-
-
+```csharp
+using Firebase.NET.Messages;
+using Firebase.NET.Notifications;
+using Firebase.NET.Infrastructure;
 
 RequestMessage requestMessage = new RequestMessage();
 string[] ids = {
@@ -37,6 +37,7 @@ PushNotificationService pushService = new PushNotificationService(updateFunc, de
 
 var responseMessage = await pushService.PushMessage(requestMessage);
 
+```
 
 # Header 1
 ## Header 2
@@ -51,7 +52,6 @@ var responseMessage = await pushService.PushMessage(requestMessage);
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
