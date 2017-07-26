@@ -1,6 +1,6 @@
 ## Welcome to Firebase.NET
 
-![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg) ![FCM Logo](https://firebase.google.com/_static/74dcb9f23a/images/firebase/lockup.png)    ![.NET Logo](https://s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2017/02/23082646/Microsoft-dotNET-logo.jpg)
+![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg) ![FCM Logo](https://firebase.google.com/_static/74dcb9f23a/images/firebase/lockup.png)    ![.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/docs/NET.jpg)
 
 Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging. 
 
