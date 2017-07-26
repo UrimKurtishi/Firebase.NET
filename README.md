@@ -2,7 +2,7 @@
 
 Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging.
 
-It is written in C# and can be used in c# or .net projects.
+It is written in C# and can be used in any c# or .net projects.
 
 ### Installation
 
