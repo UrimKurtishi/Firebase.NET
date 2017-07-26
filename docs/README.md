@@ -1,17 +1,17 @@
 ## Welcome to Firebase.NET
 
-![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg) ![FCM Logo](https://firebase.google.com/_static/74dcb9f23a/images/firebase/lockup.png)  &nbsp  ![.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/docs/NET.jpg)
+![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg) ![FCM Logo](https://firebase.google.com/_static/74dcb9f23a/images/firebase/lockup.png)     ![.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/docs/NET.jpg)
 
 Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging. 
 
 It is written entirely in C# and can be used in any c# or .net projects.
 
 
-## Firebase Cloud Messaging (FCM) HTTP Protocol
+### Firebase Cloud Messaging (FCM) HTTP Protocol
 The FCM service enables developers to push notifications to their client apps to Android, iOS and Web clients. To use it, create a project in the [FCM console](https://console.firebase.google.com)
 
 
-## Firebase.NET Library
+### Firebase.NET Library
 
 The library provides for models that can be pushed to client apps:
 * AndroidNotification
@@ -56,24 +56,10 @@ var responseMessage = await pushService.PushMessage(requestMessage);
 
 ```
 
-### Header 3
 
-- Bulleted
-- List
+### Installation & Setup
 
-1. Numbered
-2. List
+Clone or download the source file and include & build the source within your project. An advantage factor is the ability to change or add new functionality based on the needs of the application.
+Also, it can be install through NuGet Package Manager.
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/urimkurtishi/Firebase.NET/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Check out our [nuget package](https://help.github.com/categories/github-pages-basics/).
