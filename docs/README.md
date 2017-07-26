@@ -4,12 +4,39 @@
 
 Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging.
 
-### Markdown
+### How to use Firebase.NET
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Below are few sample on pushing notifications to your client apps through Firebase.NET
 
 ```markdown
 Syntax highlighted code block
+
+
+```csharp
+RequestMessage requestMessage = new RequestMessage();
+string[] ids = {
+                //registration tokens here
+};
+
+requestMessage.Body.RegistrationIds = ids;
+CrossPlatformNotification notification = new CrossPlatformNotification();
+notification.Title = "Important News";
+notification.Body = String.Format("This is a notification send from Firebase on {0} {1}", DateTime.Now.ToShortDateString(),              DateTime.Now.ToShortTimeString());
+requestMessage.Body.Notification = notification;
+
+Payload payload = new Payload();
+payload["leage"] = "UEFA";
+payload["game"] = "Albania vs Kosovo";
+payload["score"] = "1:1";
+requestMessage.Body.Data = payload;
+
+Func<string, string, bool> updateFunc = new Func<string, string, bool>(Update);
+Func<string, bool> deleteFunc = new Func<string, bool>(Delete);
+
+PushNotificationService pushService = new PushNotificationService(updateFunc, deleteFunc);
+
+var responseMessage = await pushService.PushMessage(requestMessage);
+```
 
 # Header 1
 ## Header 2
