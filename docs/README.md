@@ -2,8 +2,7 @@
 
 ![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg)
 
-Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging.
-
+Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging. 
 It is written entirely in C# and can be used in any c# or .net projects.
 
 ### How to use Firebase.NET
@@ -24,7 +23,8 @@ requestMessage.Body.RegistrationIds = ids;
 CrossPlatformNotification notification = new CrossPlatformNotification();
 notification.Title = "Important News";
 notification.Body = String.Format("This is a notification send from Firebase on {0} {1}", 
-                                   DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
+                                   DateTime.Now.ToShortDateString(),
+                                   DateTime.Now.ToShortTimeString());
 requestMessage.Body.Notification = notification;
 
 Payload payload = new Payload();
