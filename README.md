@@ -9,7 +9,7 @@ It is written in C# and can be used in c# or .net projects.
 Firebase.NET library can be downloaded directly from github and build within your project or it can be installed through NuGet Package Manager.
 
 ### Dependencies
-Newtonsoft.Json
+* Newtonsoft.Json
 
 ### Documentation
 
