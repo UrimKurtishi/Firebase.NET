@@ -12,7 +12,7 @@ Below are few sample on pushing notifications to your client apps through Fireba
 Syntax highlighted code block
 
 
-```csharp
+
 RequestMessage requestMessage = new RequestMessage();
 string[] ids = {
                 //registration tokens here
@@ -36,7 +36,7 @@ Func<string, bool> deleteFunc = new Func<string, bool>(Delete);
 PushNotificationService pushService = new PushNotificationService(updateFunc, deleteFunc);
 
 var responseMessage = await pushService.PushMessage(requestMessage);
-```
+
 
 # Header 1
 ## Header 2
