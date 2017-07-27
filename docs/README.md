@@ -1,10 +1,11 @@
 ## Welcome to Firebase.NET
 
-![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg) ![FCM Logo](https://firebase.google.com/_static/74dcb9f23a/images/firebase/lockup.png)     ![.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/docs/NET.jpg)
+![Firebase.NET Logo](https://raw.githubusercontent.com/UrimKurtishi/Firebase.NET/master/FirebaseNET.jpg) 
 
 Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging. 
 
-It is written entirely in C# and can be used in any c# or .net projects.
+It is a small and lightweight library written entirely in C# with high performance and reliability. It provides handling mechanism and retry provider (implementing exponential backoff algorithm) for response messages returned from FCM servers.
+It has been tested and it's used by different companies and projects.
 
 
 ### Firebase Cloud Messaging (FCM) HTTP Protocol
@@ -13,7 +14,17 @@ The FCM service enables developers to push notifications to their client apps to
 
 ### Firebase.NET Library
 
-The library provides for models that can be pushed to client apps:
+Three main classes are **RequestMessage**, **ResponseMessage** and **PushNotificationService**.
+
+#### RequestMessage
+This class has two properties: RequestMessageHeader and RequestMessageBody which contain all [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json) as properties. RequestMessageBody contains:
+* Notification (INotification type)
+    > Notification property contains pre-defined set of values as specified by the [FCM settings](https://firebase.google.com         /docs/cloud-messaging/http-server-ref#downstream-http-messages-json).
+* Data (IData) properties
+    > Data property is a payload that can contains custom key-value data as needed.
+
+
+The library provides four notification types that can be pushed to client apps:
 * AndroidNotification
 * IosNotification
 * WebNotification
@@ -59,7 +70,7 @@ var responseMessage = await pushService.PushMessage(requestMessage);
 
 ### Installation & Setup
 
-Clone or download the source file and include & build the source within your project. An advantage factor is the ability to change or add new functionality based on the needs of the application.
-Also, it can be install through NuGet Package Manager.
+Clone or download the source file and include & build the source within your project. An advantage for this approach is the ability to change or add new functionality based on the needs of the application.
+Also, it can be installed through NuGet Package Manager.
 
 Check out our [nuget package](https://help.github.com/categories/github-pages-basics/).
