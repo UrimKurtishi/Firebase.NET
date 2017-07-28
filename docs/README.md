@@ -57,7 +57,7 @@ var requestMessage = new RequestMessage
         {
             { "leage", "UEFA" },
             { "game", "Albania vs Kosovo!" },
-		    { "score", "1:1" }
+	    { "score", "1:1" }
         }
     }
 };
