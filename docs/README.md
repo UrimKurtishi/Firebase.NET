@@ -62,7 +62,7 @@ var requestMessage = new RequestMessage
     }
 };
        
-var pushService = new PushNotificationService(updateFunc, deleteFunc);
+var pushService = new PushNotificationService("yourFcmServerKey");
 var responseMessage = await pushService.PushMessage(requestMessage);
 
 ```
