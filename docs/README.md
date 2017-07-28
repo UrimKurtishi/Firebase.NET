@@ -75,3 +75,10 @@ Clone or download the source file and include & build the source within your pro
 Also, it can be installed through NuGet Package Manager.
 
 Check out our [nuget package](https://www.nuget.org/packages/Pantheon.Firebase.NET/1.1.0).
+
+
+### Future Plans
+
+As of now, Firebase.NET implements only Firebase Cloud Messaging for push notifications. However, there are plans to develop other Firebase services as well such as Authentication, Database etc.
+Contributors are welcome to assist in further extending Firebase.NET
+
