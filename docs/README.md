@@ -62,6 +62,7 @@ var requestMessage = new RequestMessage
         {
             Title = "Important Notification",
             Body = "This is a notification send from Firebase.NET"
+	    //other available pre-defined properties such as badge, icon, sound etc
         },
         Data = new Dictionary<string, string>
         {
