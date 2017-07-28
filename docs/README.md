@@ -10,7 +10,7 @@ It has been tested and it's used by different companies and projects.
 
 ### Firebase Cloud Messaging (FCM) HTTP Protocol
 The FCM service enables developers to push notifications to their client apps to Android, iOS and Web clients. To use it, create a project in the [FCM console](https://console.firebase.google.com)
-<br/>
+
 
 ### Firebase.NET Library
 
@@ -36,7 +36,6 @@ This property is a payload (class Payload that inherits Dictionary<string, strin
 #### PushNotificationService
 This service has a PushMessage method that receives a RequestMessage as parameter to push to client apps.
 
-<br/>
 
 ### How to use Firebase.NET
 
