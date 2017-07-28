@@ -34,9 +34,11 @@ This class has two important properties: RequestMessageHeader and RequestMessage
 2. Data 
     * This property is a payload (class **Payload** that inherits **Dictionary<string, string>**) that can be attached to the notification and can contain any key-value data.
 
+#### ResponseMessage
+This class contains information about each registration token's push status and retry status for tokens that failed to be pushed the first time.
 
 #### PushNotificationService
-This service has an async **PushMessage** method that receives a RequestMessage as a parameter to push to client apps.
+This service has an async **PushMessage** method that receives a RequestMessage as a parameter to push to client apps and returns a ResponseMessage that contains information about each registration token's push status.
 
 
 ### How to use Firebase.NET
