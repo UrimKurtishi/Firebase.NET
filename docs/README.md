@@ -18,18 +18,20 @@ Three main classes are **RequestMessage**, **ResponseMessage** and **PushNotific
 
 #### RequestMessage
 This class has two important properties: RequestMessageHeader and RequestMessageBody which contain all [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json) as properties. RequestMessageBody contains:
-* Notification 
-    > Notification property contains pre-defined set of values as specified by the [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json).
-* Data 
-    > Data property is a payload that can contain custom key-value data as needed.
+1 Notification 
+    * Notification property contains pre-defined set of values as specified by the [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json).
+2 Data 
+    * Data property is a payload that can contain custom key-value data as needed.
 
-
+<br/>
 
 The library provides four notification types that can be pushed to client apps:
 * AndroidNotification
 * IosNotification
 * WebNotification
 * CrossPlatformNotification
+
+<br/>
 
 ### How to use Firebase.NET
 
@@ -78,6 +80,6 @@ Check out our [nuget package](https://www.nuget.org/packages/Pantheon.Firebase.N
 
 ### Future Plans
 
-As of now, Firebase.NET implements only Firebase Cloud Messaging for push notifications. However, there are plans to develop other Firebase services as well such as Authentication, Realtime Database etc.
+As of now, Firebase.NET implements only Firebase Cloud Messaging for push notifications. However, there are plans to develop other Firebase services as well such as Authentication, Realtime Database, Storage etc.
 Contributors are welcome to assist in further extending Firebase.NET
 
