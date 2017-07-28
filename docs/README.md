@@ -25,19 +25,15 @@ Three main classes are **RequestMessage**, **ResponseMessage** and **PushNotific
 #### RequestMessage
 This class has two important properties: RequestMessageHeader and RequestMessageBody which contain all [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json) as properties. RequestMessageBody contains:
 1. Notification 
-    * Notification property contains pre-defined set of values as specified by the [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json).
+	Notification property contains pre-defined set of values as specified by the [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json).
+	The library provides four notification types that can be pushed to client apps:
+	* AndroidNotification
+	* IosNotification
+	* WebNotification
+	* CrossPlatformNotification
 2. Data 
-    * Data property is a payload that can contain custom key-value data as needed.
+    * This property is a payload (class Payload that inherits Dictionary<string, string>) that can be attached to the notification and can contain any key-value data.
 
-#### Notification
-The library provides four notification types that can be pushed to client apps:
-* AndroidNotification
-* IosNotification
-* WebNotification
-* CrossPlatformNotification
-
-#### Data
-This property is a payload (class Payload that inherits Dictionary<string, string>) that can be attached to the notification and can contain any key-value data.
 
 #### PushNotificationService
 This service has a PushMessage method that receives a RequestMessage as parameter to push to client apps.
