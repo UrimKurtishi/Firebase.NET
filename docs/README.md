@@ -27,16 +27,16 @@ This class has two important properties: RequestMessageHeader and RequestMessage
 1. Notification <br/>
 	Notification property contains pre-defined set of values as specified by the [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json). <br/>
 	The library provides four notification types that can be pushed to client apps:
-	* AndroidNotification
-	* IosNotification
-	* WebNotification
-	* CrossPlatformNotification
+	* **AndroidNotification**
+	* **IosNotification**
+	* **WebNotification**
+	* **CrossPlatformNotification**
 2. Data 
-    * This property is a payload (class Payload that inherits Dictionary<string, string>) that can be attached to the notification and can contain any key-value data.
+    * This property is a payload (class **Payload** that inherits **Dictionary<string, string>**) that can be attached to the notification and can contain any key-value data.
 
 
 #### PushNotificationService
-This service has a PushMessage method that receives a RequestMessage as parameter to push to client apps.
+This service has an async **PushMessage** method that receives a RequestMessage as a parameter to push to client apps.
 
 
 ### How to use Firebase.NET
