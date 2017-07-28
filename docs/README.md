@@ -38,7 +38,6 @@ Below is a sample on pushing notifications to your client apps through Firebase.
 ```csharp
 using Firebase.NET.Messages;
 using Firebase.NET.Notifications;
-using Firebase.NET.Infrastructure;
 
 string[] ids = {
     //registration tokens here
