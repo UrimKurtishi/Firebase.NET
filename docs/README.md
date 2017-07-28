@@ -15,7 +15,7 @@ It has been tested and it's used by different companies and projects.
 
 
 ### Firebase Cloud Messaging (FCM) HTTP Protocol
-The FCM service enables developers to push notifications to their client apps to Android, iOS and Web clients. To use it, create a project in the [FCM console](https://console.firebase.google.com)
+The FCM service enables developers to push notifications to their client apps to Android, iOS and Web clients. To use it, create a project in the [FCM console](https://console.firebase.google.com) and retrieve your servey key.
 
 
 ### Firebase.NET Library
