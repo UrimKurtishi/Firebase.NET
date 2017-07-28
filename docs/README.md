@@ -10,6 +10,7 @@ It provides:
 * handling mechanism for response messages returned from FCM servers
 * retry provider (implementing exponential backoff algorithm)
 * serialization/deserialization etc.
+
 It has been tested and it's used by different companies and projects.
 
 
