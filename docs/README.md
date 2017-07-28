@@ -17,10 +17,10 @@ The FCM service enables developers to push notifications to their client apps to
 Three main classes are **RequestMessage**, **ResponseMessage** and **PushNotificationService**.
 
 #### RequestMessage
-This class has two properties: RequestMessageHeader and RequestMessageBody which contain all [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json) as properties. RequestMessageBody contains:
-* Notification (INotification type)
+This class has two important properties: RequestMessageHeader and RequestMessageBody which contain all [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json) as properties. RequestMessageBody contains:
+* Notification 
     > Notification property contains pre-defined set of values as specified by the [FCM settings](https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json).
-* Data (IData) properties
+* Data 
     > Data property is a payload that can contain custom key-value data as needed.
 
 
@@ -40,30 +40,30 @@ using Firebase.NET.Messages;
 using Firebase.NET.Notifications;
 using Firebase.NET.Infrastructure;
 
-RequestMessage requestMessage = new RequestMessage();
 string[] ids = {
     //registration tokens here
 };
 
-requestMessage.Body.RegistrationIds = ids;
-CrossPlatformNotification notification = new CrossPlatformNotification();
-notification.Title = "Important News";
-notification.Body = String.Format("This is a notification send from Firebase on {0} {1}", 
-                                   DateTime.Now.ToShortDateString(),
-                                   DateTime.Now.ToShortTimeString());
-requestMessage.Body.Notification = notification;
-
-Payload payload = new Payload();
-payload["leage"] = "UEFA";
-payload["game"] = "Albania vs Kosovo";
-payload["score"] = "1:1";
-requestMessage.Body.Data = payload;
-
-Func<string, string, bool> updateFunc = new Func<string, string, bool>(Update);
-Func<string, bool> deleteFunc = new Func<string, bool>(Delete);
-
-PushNotificationService pushService = new PushNotificationService(updateFunc, deleteFunc);
-
+var requestMessage = new RequestMessage
+{
+    Body =
+    {
+        RegistrationIds = ids,
+        Notification = new CrossPlatformNotification
+        {
+            Title = "Important Notification",
+            Body = "This is a notification send from Firebase.NET"
+        },
+        Data = new Dictionary<string, string>
+        {
+            { "leage", "UEFA" },
+            { "game", "Albania vs Kosovo!" },
+		    { "score", "1:1" }
+        }
+    }
+};
+       
+var pushService = new PushNotificationService(updateFunc, deleteFunc);
 var responseMessage = await pushService.PushMessage(requestMessage);
 
 ```
