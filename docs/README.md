@@ -78,6 +78,6 @@ Check out our [nuget package](https://www.nuget.org/packages/Pantheon.Firebase.N
 
 ### Future Plans
 
-As of now, Firebase.NET implements only Firebase Cloud Messaging for push notifications. However, there are plans to develop other Firebase services as well such as Authentication, Database etc.
+As of now, Firebase.NET implements only Firebase Cloud Messaging for push notifications. However, there are plans to develop other Firebase services as well such as Authentication, Realtime Database etc.
 Contributors are welcome to assist in further extending Firebase.NET
 
