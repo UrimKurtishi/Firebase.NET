@@ -4,7 +4,7 @@
 
 Firebase.NET implements Firebase Cloud Messaging HTTP Protocol that enables sending notifications to Android, iOS and Web clients through Firebase Cloud Messaging. 
 
-It is a small and lightweight library written entirely in C# with high performance and reliability. It provides handling mechanism and retry provider (implementing exponential backoff algorithm) for response messages returned from FCM servers.
+It is a small and lightweight .NET client library written entirely in C# with high performance and reliability. It provides handling mechanism and retry provider (implementing exponential backoff algorithm) for response messages returned from FCM servers.
 It has been tested and it's used by different companies and projects.
 
 
@@ -74,4 +74,4 @@ var responseMessage = await pushService.PushMessage(requestMessage);
 Clone or download the source file and include & build the source within your project. An advantage for this approach is the ability to change or add new functionality based on the needs of the application.
 Also, it can be installed through NuGet Package Manager.
 
-Check out our [nuget package](https://help.github.com/categories/github-pages-basics/).
+Check out our [nuget package](https://www.nuget.org/packages/Pantheon.Firebase.NET/1.1.0).
