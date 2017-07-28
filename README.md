@@ -14,4 +14,4 @@ Firebase.NET library can be downloaded directly from github and build within you
 
 ### Documentation
 
-Check out our [documentation](https://urimkurtishi.github.io/Firebase.NET/) for more information and tutorials on how to use Firebase.NET library.
+Check out our [documentation](https://urimkurtishi.github.io/Firebase.NET/#how-to-use-firebasenet) for more information and tutorials on how to use Firebase.NET library.
