@@ -128,7 +128,7 @@ var requestMessage = new RequestMessage
 //your implemented functions that will be send to Firebase.NET as parameters
 Func<string, string, bool> updateFunc = new Func<string, string, bool>(Update);
 Func<string, bool> deleteFunc = new Func<string, bool>(Delete);
-var pushService = new PushNotificationService("yourFcmServerKey");
+var pushService = new PushNotificationService("yourFcmServerKey", updateFunc, deleteFunc);
 
 var responseMessage = await pushService.PushMessage(requestMessage);
 
