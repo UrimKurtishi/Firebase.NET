@@ -41,18 +41,18 @@ This class contains information about each registration token's push status and 
 This service has an async **PushMessage** method that receives a RequestMessage as a parameter to push to client apps and returns a ResponseMessage that contains information about each registration token's push status.
 <br/>
 PushnotificationService has several constructors available:<br/>
-**1.** new PushnotificationService() <br/>
+1. new PushnotificationService() <br/>
 	This is the default constructor. If you use this, you must store Firebase server key in your app.config or web.config file as *appsettings* child element with the key name **"FirebaseServerKey"**. You can add two other settings: **"FirebaseSenderID"** and **"FirebaseConnectionEndpoint"**, they are unneccessary, but if you provide them you must make sure to set FirebaseConnectionEndpoint to "https://fcm.googleapis.com/fcm/send" as provided by Google. Otherwise, leave FirebaseSenderID (it's not needed to send pushes) and FirebaseConnectionEndpoint is set for you by the library itself.
-**2.** new PushnotificationService("yourFcmServcrKey")
+2. new PushnotificationService("yourFcmServcrKey")
 	This constructor takes your Firebase server key and it's ready to push notifications.
-**3. new PushnotificationService("yourFcmServcrKey", updateFunc, deleteFunc)**
+3. new PushnotificationService("yourFcmServcrKey", updateFunc, deleteFunc)**
 	This is the suggested constructor to use for all your use cases. See below for more info about these two func parameters.
-**4.** new PushnotificationService(updateFunc, deleteFunc)
+4. new PushnotificationService(updateFunc, deleteFunc)
 	To use this constructor, you must set "FirebaseServerKey" in your app.config or web.config as statet above on the first constructor.
-**5.** new PushnotificationService(updateFunc, deleteFunc, appSettings)
+5. new PushnotificationService(updateFunc, deleteFunc, appSettings)
 	appSettings is instance of Firebase.NET.Infrastructure.ApplicationSettings.
 	It's a class that has FirebaseServerKey as property that you can set and send the class instance as parameter to PushNotificationService.
-**6.** new PushnotificationService(appSettings)
+6. new PushnotificationService(appSettings)
 	See below for appsettings.
 
 <br/>
