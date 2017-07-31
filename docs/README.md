@@ -68,7 +68,8 @@ Naming of function and parameters doesn't matter only parameter and return type.
 ```csharp
 /// <summary>
 /// This method updates the old registration token with new registration token
-/// Firebase.NET will call this method with appropriate tokens if Firebase servers return new token that should change old one
+/// Firebase.NET will call this method with appropriate tokens if Firebase servers 
+/// return new token that should change old one.
 /// </summary>
 public static bool Update(string oldToken, string newToken) 
 { 
@@ -77,7 +78,8 @@ public static bool Update(string oldToken, string newToken)
 }
 
 /// <summary>
-/// This method deletes registration token that is invalid and you should not try to push notifications any longer to it.
+/// This method deletes registration token that is invalid and you should not try
+/// to push notifications any longer to it.
 /// </summary>
 public static bool Delete(string oldToken) 
 { 
