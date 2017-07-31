@@ -42,15 +42,15 @@ This service has an async **PushMessage** method that receives a RequestMessage 
 <br/>
 PushnotificationService has several constructors available:<br/>
 1. new PushnotificationService() <br/>
-	This is the default constructor. If you use this, you must store Firebase server key in your app.config or web.config file as *appsettings* child element with the key name **"FirebaseServerKey"**. You can add two other settings: **"FirebaseSenderID"** and **"FirebaseConnectionEndpoint"**, they are unneccessary, but if you provide them you must make sure to set FirebaseConnectionEndpoint to "https://fcm.googleapis.com/fcm/send" as provided by Google. Otherwise, leave FirebaseSenderID (it's not needed to send pushes) and FirebaseConnectionEndpoint is set for you by the library itself.
+	This is the default constructor. If you use this, you must store Firebase server key in your app.config or web.config file as *appsettings* child element with the key name **"FirebaseServerKey"**. You can add two other settings: **"FirebaseSenderID"** and **"FirebaseConnectionEndpoint"**, however they are unneccessary, but if you provide them you must make sure to set FirebaseConnectionEndpoint to "https://fcm.googleapis.com/fcm/send" as provided by Google. Otherwise, leave out FirebaseSenderID (it's not needed to send pushes) and FirebaseConnectionEndpoint (is set by the library itself).
 2. new PushnotificationService("yourFcmServcrKey")
 	This constructor takes your Firebase server key and it's ready to push notifications.
-3. new PushnotificationService("yourFcmServcrKey", updateFunc, deleteFunc)**
-	This is the suggested constructor to use for all your use cases. See below for more info about these two func parameters.
+3. **new PushnotificationService("yourFcmServcrKey", updateFunc, deleteFunc)**
+	This is the recommended constructor to use for all your use cases. See below for more info about these two func parameters.
 4. new PushnotificationService(updateFunc, deleteFunc)
-	To use this constructor, you must set "FirebaseServerKey" in your app.config or web.config as statet above on the first constructor.
+	To use this constructor, you must set "FirebaseServerKey" in your app.config or web.config as stated above on the first constructor. Otherwise, it won't be able to push notifications.
 5. new PushnotificationService(updateFunc, deleteFunc, appSettings)
-	appSettings is instance of Firebase.NET.Infrastructure.ApplicationSettings.
+	appSettings is instance of Firebase.NET.Infrastructure.ApplicationSettings
 	It's a class that has FirebaseServerKey as property that you can set and send the class instance as parameter to PushNotificationService.
 6. new PushnotificationService(appSettings)
 	See below for appsettings.
@@ -62,7 +62,10 @@ This is a [class](https://github.com/UrimKurtishi/Firebase.NET/blob/master/src/F
 ##### updateFunc, deleteFunc <br/>
 Sometimes registration tokens of client apps can change based on different [scenarios](https://firebase.google.com/docs/cloud-messaging/http-server-ref#error-codes). In that case you need to delete the invalid one or if new one has been generated (which firebase servers will return it on response), it needs to be updated.
 Firebase.NET library provides interface to achieve this by allowing the developer to implement those two types of functions and it will call them in case it needs to delete or update the old one respectively.
-However it must comply with the signature as below. The update function must accept two string parameters and return bool whereas delete function must accept one string parameter and return bool as well.
+However it must comply with the signature as below. <br/>
+The update function must accept two string parameters and return bool whereas delete function must accept one string parameter and return bool as well.<br/>
+Naming of function and parameters doesn't matter only parameter and return type.
+
 ```csharp
 /// <summary>
 /// This method updates the old registration token with new registration token
@@ -82,6 +85,10 @@ public static bool Delete(string oldToken)
 	//delete oldToken from your database
 	return true; 
 }
+
+Func<string, string, bool> updateFunc = new Func<string, string, bool>(Update);
+Func<string, bool> deleteFunc = new Func<string, bool>(Delete);
+var pushService = new PushNotificationService("firebaseServerKey", updateFunc, deleteFunc);
 ```
 
 
