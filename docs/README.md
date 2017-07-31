@@ -45,7 +45,7 @@ PushnotificationService has several constructors available:<br/>
 	This is the default constructor. If you use this, you must store Firebase server key in your app.config or web.config file as *appsettings* child element with the key name **"FirebaseServerKey"**. You can add two other settings: **"FirebaseSenderID"** and **"FirebaseConnectionEndpoint"**, however they are unneccessary, but if you provide them you must make sure to set FirebaseConnectionEndpoint to "https://fcm.googleapis.com/fcm/send" as provided by Google. Otherwise, leave out FirebaseSenderID (it's not needed to send pushes) and FirebaseConnectionEndpoint (is set by the library itself).
 2. PushnotificationService("yourFcmServcrKey") <br/>
 	This constructor takes your Firebase server key and it's ready to push notifications.
-3. **PushnotificationService("yourFcmServcrKey", updateFunc, deleteFunc)** <br/>
+3. **PushnotificationService("yourFcmServerKey", updateFunc, deleteFunc)** <br/>
 	This is the recommended constructor to use for all your use cases. See below for more info about these two func parameters.
 4. PushnotificationService(updateFunc, deleteFunc) <br/>
 	To use this constructor, you must set "FirebaseServerKey" in your app.config or web.config as stated above on the first constructor. Otherwise, it won't be able to push notifications.
