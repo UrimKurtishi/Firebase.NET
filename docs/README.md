@@ -52,7 +52,7 @@ PushnotificationService has several constructors available:<br/>
 5. PushnotificationService(updateFunc, deleteFunc, appSettings) <br/>
 	appSettings is instance of Firebase.NET.Infrastructure.ApplicationSettings
 	It's a class that has FirebaseServerKey as property that you can set and send the class instance as parameter to PushNotificationService.
-6. PushnotificationService(appSettings) <br/>
+6. PushnotificationService(settings: appSettings) <br/>
 	See below for appsettings. <br/>
 
 #### ApplicationSettings 
