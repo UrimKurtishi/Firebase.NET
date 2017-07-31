@@ -39,6 +39,50 @@ This class contains information about each registration token's push status and 
 
 #### PushNotificationService
 This service has an async **PushMessage** method that receives a RequestMessage as a parameter to push to client apps and returns a ResponseMessage that contains information about each registration token's push status.
+<br/>
+PushnotificationService has several constructors available:<br/>
+**1.** new PushnotificationService() <br/>
+	This is the default constructor. If you use this, you must store Firebase server key in your app.config or web.config file as *appsettings* child element with the key name **"FirebaseServerKey"**. You can add two other settings: **"FirebaseSenderID"** and **"FirebaseConnectionEndpoint"**, they are unneccessary, but if you provide them you must make sure to set FirebaseConnectionEndpoint to "https://fcm.googleapis.com/fcm/send" as provided by Google. Otherwise, leave FirebaseSenderID (it's not needed to send pushes) and FirebaseConnectionEndpoint is set for you by the library itself.
+**2.** new PushnotificationService("yourFcmServcrKey")
+	This constructor takes your Firebase server key and it's ready to push notifications.
+**3. new PushnotificationService("yourFcmServcrKey", updateFunc, deleteFunc)**
+	This is the suggested constructor to use for all your use cases. See below for more info about these two func parameters.
+**4.** new PushnotificationService(updateFunc, deleteFunc)
+	To use this constructor, you must set "FirebaseServerKey" in your app.config or web.config as statet above on the first constructor.
+**5.** new PushnotificationService(updateFunc, deleteFunc, appSettings)
+	appSettings is instance of Firebase.NET.Infrastructure.ApplicationSettings.
+	It's a class that has FirebaseServerKey as property that you can set and send the class instance as parameter to PushNotificationService.
+**6.** new PushnotificationService(appSettings)
+	See below for appsettings.
+
+<br/>
+##### ApplicationSettings <br/>
+This is a [class](https://github.com/UrimKurtishi/Firebase.NET/blob/master/src/Firebase.NET/Infrastructure/ApplicationSettings.cs) that has three properties as stated above by first constructor. This is another method of providing Firebase project data instead of storing them in your project's app.config or web.config file.
+
+##### updateFunc, deleteFunc <br/>
+Sometimes registration tokens of client apps can change based on different [scenarios](https://firebase.google.com/docs/cloud-messaging/http-server-ref#error-codes). In that case you need to delete the invalid one or if new one has been generated (which firebase servers will return it on response), it needs to be updated.
+Firebase.NET library provides interface to achieve this by allowing the developer to implement those two types of functions and it will call them in case it needs to delete or update the old one respectively.
+However it must comply with the signature as below. The update function must accept two string parameters and return bool whereas delete function must accept one string parameter and return bool as well.
+```csharp
+/// <summary>
+/// This method updates the old registration token with new registration token
+/// Firebase.NET will call this method with appropriate tokens if Firebase servers return new token that should change old one
+/// </summary>
+public static bool Update(string oldToken, string newToken) 
+{ 
+	//update oldToken with newToken in your database
+	return true; 
+}
+
+/// <summary>
+/// This method deletes registration token that is invalid and you should not try to push notifications any longer to it.
+/// </summary>
+public static bool Delete(string oldToken) 
+{ 
+	//delete oldToken from your database
+	return true; 
+}
+```
 
 
 ### How to use Firebase.NET
