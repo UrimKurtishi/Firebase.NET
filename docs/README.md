@@ -89,7 +89,7 @@ public static bool Delete(string oldToken)
 
 Func<string, string, bool> updateFunc = new Func<string, string, bool>(Update);
 Func<string, bool> deleteFunc = new Func<string, bool>(Delete);
-var pushService = new PushNotificationService("firebaseServerKey", updateFunc, deleteFunc);
+var pushService = new PushNotificationService("yourFcmServerKey", updateFunc, deleteFunc);
 ```
 
 
