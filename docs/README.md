@@ -60,10 +60,10 @@ This is a [class](https://github.com/UrimKurtishi/Firebase.NET/blob/master/src/F
 
 #### updateFunc, deleteFunc <br/>
 Sometimes registration tokens of client apps can change based on different [scenarios](https://firebase.google.com/docs/cloud-messaging/http-server-ref#error-codes). In that case you need to delete the invalid one or if new one has been generated (which firebase servers will return it on response), it needs to be updated.
-Firebase.NET library provides interface to achieve this by allowing the developer to implement those two types of functions and it will call them in case it needs to delete or update the old one respectively.
-However it must comply with the signature as below. <br/>
-The update function must accept two string parameters and return bool whereas delete function must accept one string parameter and return bool as well.<br/>
+Firebase.NET library provides interface to achieve this by allowing the developer to implement those two types of functions and it will call them in case it needs to delete or update the old one respectively. <br/>
+However it must comply with the signature requirements. The update function must accept two string parameters and return bool whereas delete function must accept one string parameter and return bool as well.<br/>
 Naming of function and parameters doesn't matter only parameter and return type.
+It is highly recommended that you implement and provide these two functions to maintain a healthy list of registration tokens.
 
 ```csharp
 /// <summary>
@@ -124,8 +124,12 @@ var requestMessage = new RequestMessage
         }
     }
 };
-       
+
+
+Func<string, string, bool> updateFunc = new Func<string, string, bool>(Update);
+Func<string, bool> deleteFunc = new Func<string, bool>(Delete);
 var pushService = new PushNotificationService("yourFcmServerKey");
+
 var responseMessage = await pushService.PushMessage(requestMessage);
 
 ```
