@@ -38,8 +38,8 @@ This class has two important properties: RequestMessageHeader and RequestMessage
 This class contains information about each registration token's push status and retry status for tokens that failed to be pushed the first time.
 
 #### PushNotificationService
-This service has an async **PushMessage** method that receives a RequestMessage as a parameter to push to client apps and returns a ResponseMessage that contains information about each registration token's push status.
-<br/>
+This service has an async **PushMessage** method that receives a RequestMessage as a parameter to push to client apps and returns a ResponseMessage that contains information about each registration token's push status. <br/>
+
 PushnotificationService has several constructors available:<br/>
 1. PushnotificationService() <br/>
 	This is the default constructor. If you use this, you must store Firebase server key in your app.config or web.config file as *appsettings* child element with the key name **"FirebaseServerKey"**. You can add two other settings: **"FirebaseSenderID"** and **"FirebaseConnectionEndpoint"**, however they are unneccessary, but if you provide them you must make sure to set FirebaseConnectionEndpoint to "https://fcm.googleapis.com/fcm/send" as provided by Google. Otherwise, leave out FirebaseSenderID (it's not needed to send pushes) and FirebaseConnectionEndpoint (is set by the library itself).
