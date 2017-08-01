@@ -119,7 +119,7 @@ var requestMessage = new RequestMessage
         Data = new Dictionary<string, string>
         {
             { "leage", "UEFA" },
-            { "game", "Albania vs Kosovo!" },
+            { "game", "Albania vs Kosovo" },
 	    { "score", "1:1" }
         }
     }
